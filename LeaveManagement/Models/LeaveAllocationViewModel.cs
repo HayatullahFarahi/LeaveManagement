@@ -20,7 +20,7 @@ namespace LeaveManagement.Models
         //based on EmployeeId we can store the employee data in Employee Objects created in the above line
         public string EmployeeId { get; set; }
        
-        public DetailsLeaveTypeViewModel LeaveType { get; set; }
+        public LeaveTypeViewModel LeaveType { get; set; }
 
         public int LeaveTypeId { get; set; }
 

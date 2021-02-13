@@ -13,8 +13,7 @@ namespace LeaveManagement.Data
 
         [Required]
         public string Name { get; set; }
-
-        public DateTime  DataCreated { get; set; }
+        public DateTime  DateCreated { get; set; }
 
     }
 }

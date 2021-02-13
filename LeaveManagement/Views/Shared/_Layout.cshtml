@@ -4,8 +4,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Leave Management</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-lumen.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+@*
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/font-awesome.min.css" />
+*@
+
+    @*STAGES WIZARD css link*@
+    @*<link href="https://cdn.jsdelivr.net/npm/smartwizard@5/dist/css/smart_wizard_all.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/b6c1df4024.js" crossorigin="anonymous"></script>*@
 </head>
 <body>
     <header>
@@ -30,11 +39,14 @@
                                 Manage
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item text-dark" href="#">Leave Types</a>
+                                <a class="dropdown-item text-dark" asp-controller="LeaveTypes" asp-action="Index">Leave Types</a>
                                 <a class="dropdown-item text-dark" href="#">Leave Allocations</a>
                                 <a class="dropdown-item text-dark" href="#">Leave Applications</a>
                                 <a class="dropdown-item text-dark" href="#">Employees</a>
                             </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Wizard" asp-action="Index">Stages Wizard</a>
                         </li>
                     </ul>
                 </div>
@@ -53,8 +65,23 @@
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery-3.3.1.slim.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="//cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+
+    <script src="~/js/font-awesome.js" crossorigin="anonymous"></script>
+
+    @*<script src="~/js/smartWizard.js" asp-append-version="true"></script>*@
+    @*STAGES WIZARD JAVASCRIPT link*@
+    @*<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>*@
+    @* <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+        crossorigin="anonymous"></script>*@
+    @* <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>*@
+
+
     @RenderSection("Scripts", required: false)
 </body>
 </html>
