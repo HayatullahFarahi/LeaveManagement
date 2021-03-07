@@ -1,0 +1,60 @@
+﻿@model IEnumerable<LeaveManagement.Models.LeaveTypeViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<h1>Leave Types</h1>
+<hr/>
+<p>
+    <a asp-action="Create" class="btn btn-success"> <i class="fa fa-plus" aria-hidden="true"></i> Create New</a>
+</p>
+<table id="tableData" class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateCreated)
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateCreated)
+            </td>
+            <td>
+                <ul class="list-inline m-0">
+                    <li class="list-inline-item">
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Details"><i class="fa fa-table"></i></a>
+                    </li>
+
+                    <li class="list-inline-item">
+                        <a asp-action="Delete" asp-route-id="@item.Id" onclick="return confirm('Are you sure want to delete this record?')" class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+@section Scripts
+{
+    <script>
+       
+    </script>
+}
+

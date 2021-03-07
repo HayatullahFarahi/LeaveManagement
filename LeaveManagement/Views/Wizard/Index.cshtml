@@ -1,0 +1,228 @@
+﻿@model IEnumerable<LeaveManagement.Models.LeaveTypeViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<link rel="stylesheet" href="~/css/stepsStyle.css" />
+<style>
+    
+
+    .card {
+        transition: box-shadow .3s;
+        padding: 18px;
+        border-radius: 10px;
+        border: 2px solid #ccc;
+        background: #f4f5f7;
+    }
+
+        .card:hover {
+            box-shadow: 0 0 11px rgba(33,33,33,.2);
+        }
+</style>
+
+<div class="container">
+    <div class="card">
+
+        <form class="needs-validation" novalidate asp-action="Search">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="M16">M16</label>
+                        <input required class="form-control" type="number" name="m16" id="m16" placeholder="M16 Code" />
+                        <div class="invalid-feedback">
+                            Please enter M16 code
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="organization">Organization</label>
+                        <input required class="form-control" type="number" name="organization" id="organization" placeholder="Organization Code" />
+                        <div class="invalid-feedback">
+                            Please enter organization code.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input required class="form-control" type="number" name="location" id="m16" placeholder="Location Code" />
+                        <div class="invalid-feedback">
+                            Please province code.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="budgetType">Budget Type</label>
+                        <select required class="form-control" name="budgetType" id="budgetType">
+                            <option value="" selected disabled>--Select Budget Type--</option>
+                            <option value="0">Ordinary Budget</option>
+                            <option value="1">Special Budget</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Please choose budget type.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <button type="submit" class="btn btn-primary btn-block">
+                        Search
+                        <i style="margin-left:6px" class="fa fa-search"></i>
+                    </button>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+
+        </form>
+    </div>
+    <br />
+
+    <script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--<h1>Cheque Stages</h1>
+
+
+    <section class="design-process-section" id="process-tab">
+        <div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- design process steps-->
+                    <!-- Nav tabs -->
+                    <!--<ul class="nav nav-tabs process-model more-icon-preocess" role="tablist">
+                        <li role="presentation" class="active">
+                            <a href="#discover" aria-controls="discover" role="tab" data-toggle="tab">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                                <p>Discover</p>
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#strategy" aria-controls="strategy" role="tab" data-toggle="tab">
+                                <i class="fa fa-send-o" aria-hidden="true"></i>
+                                <p>Strategy</p>
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#optimization" aria-controls="optimization" role="tab" data-toggle="tab">
+                                <i class="fa fa-qrcode" aria-hidden="true"></i>
+                                <p>Optimization</p>
+                            </a>
+                        </li>-->
+                        @*<li role="presentation"><a href="#content" aria-controls="content" role="tab" data-toggle="tab"><i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                            <p>Content</p>
+                            </a></li>*@
+                       @* <li role="presentation">
+                            <a href="#reporting" aria-controls="reporting" role="tab" data-toggle="tab">
+                                <i class="fa fa-clipboard" aria-hidden="true"></i>
+                                <p>Reporting</p>
+                            </a>
+                        </li>
+                    </ul>-->*@
+                    <!-- end design process steps-->
+                    <!-- Tab panes -->
+                    <!--<div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="discover">
+                            <div class="design-process-content">
+                                <h3 class="semi-bold">Discovery</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincid unt ut laoreet dolore magna aliquam erat volutpat</p>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="strategy">
+                            <div class="design-process-content">
+                                <h3 class="semi-bold">Strategy</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincid unt ut laoreet dolore magna aliquam erat volutpat</p>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="optimization">
+                            <div class="design-process-content">
+                                <h3 class="semi-bold">Optimization</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincid unt ut laoreet dolore magna aliquam erat volutpat</p>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="content">
+                            <div class="design-process-content">
+                                <h3 class="semi-bold">Content</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincid unt ut laoreet dolore magna aliquam erat volutpat</p>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="reporting">
+                            <div class="design-process-content">
+                                <h3>Reporting</h3>
+                                <p>
+                                    dolLorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincid unt ut laoreetore magna aliqua
+                                    dolLorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincid unt ut laoreetore magna aliqua
+                                    dolLorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincid unt ut laoreetore magna aliqua
+                                    dolLorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincid unt ut laoreetore magna aliqua
+                                    dolLorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincid unt ut laoreetore magna aliqua
+                                    dolLorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincid unt ut laoreetore magna aliqua
+                                    dolLorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincid unt ut laoreetore magna aliqua
+                                    dolLorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincid unt ut laoreetore magna aliqua
+                                    dolLorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincid unt ut laoreetore magna aliqua
+                                    m erat volutpat.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>-->
+</div>
