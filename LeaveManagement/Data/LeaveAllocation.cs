@@ -11,19 +11,25 @@ namespace LeaveManagement.Data
     {
         [Key]
         public int Id { get; set; }
+        
         public int NumberOfDays { get; set; }
+        
         public DateTime Date { get; set; }
-
+        
         [ForeignKey("EmployeeId")]
+        
         public Employee Employee { get; set; }
-
         //based on EmployeeId we can store the employee data in Employee Objects created in the above line
+        
         public string EmployeeId { get; set; }
+        
         [ForeignKey("LeaveTypeId")]
+        
         public LeaveType LeaveType { get; set; }
 
         public int LeaveTypeId { get; set; }
 
-
+        public int Period { get; set; }
+        
     }
 }

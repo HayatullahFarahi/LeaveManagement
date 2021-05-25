@@ -11,9 +11,11 @@ namespace LeaveManagement.Models
     {
        
         public int Id { get; set; }
-        [Required]
+
         public int NumberOfDays { get; set; }
         public DateTime Date { get; set; }
+
+        public int Period { get; set; }
 
         public EmployeeViewModel Employee { get; set; }
 
@@ -30,4 +32,22 @@ namespace LeaveManagement.Models
 
 
     }
+
+    public class CreateLeaveAllocataionVM
+    {
+        public int NumberUpdated { get; set; }
+        public List<LeaveTypeViewModel> LeaveTypes { get; set; }
+
+    }
+
+    public class ViewAllocationsVM
+    {
+        public EmployeeViewModel Employee { get; set; }
+
+        public string EmployeeId { get; set; }
+
+        public List<LeaveAllocationViewModel> LeaveAllocations { get; set; }
+
+    }
+
 }
